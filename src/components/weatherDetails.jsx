@@ -29,19 +29,19 @@ function WeatherDetails({ miasto }){
               <strong>Zachmurzenie:</strong>
               <div>{miasto.aktualneZachmurzenie}</div>
             </div>
-            {Array.isArray(miasto.prognoza5Dni) && (
+            {Array.isArray(miasto.prognoza5dni) && (
               <div className="card details-panel forecast">
                 <h3>5-dniowa prognoza</h3>
                 <div className="forecast-row">
-                  {miasto.prognoza5Dni.map((dzien, idx) => (
+                  {miasto.prognoza5dni.map((dzień, idx) => (
                     <div className="forecast-day" key={idx}>
                       <div>
-                        <WeatherIcon condition={dzien.pogoda}></WeatherIcon>
+                        <WeatherIcon condition={dzień.pogoda}></WeatherIcon>
                       </div>
-                      <div className="details-item"><strong>{dzien.dzien}</strong></div>
-                      <div className="details-item">Temperatura: {dzien.temperatura} °C</div>
-                      <div className="details-item">Pogoda: {dzien.pogoda}</div>
-                      {dzien.kierunekWiatru && <div className="details-item">Kierunek wiatru: {dzien.kierunekWiatru}</div>}
+                      <div className="details-item"><strong>{dzień.dzień}</strong></div>
+                      <div className="details-item">Temperatura: {dzień.temperatura} °C</div>
+                      <div className="details-item">Pogoda: {dzień.pogoda}</div>
+                      {dzień.kierunekWiatru && <div className="details-item">Kierunek wiatru: {dzień.kierunekWiatru}</div>}
                     </div>
                   ))}
                 </div>

@@ -5,7 +5,7 @@ function CityDetailPage({miasta}){
     const {cityId} = useParams();
     const navigate = useNavigate();
 
-    const miasto = miasta.find(x => x.id === parseInt(cityId));
+    const miasto = miasta.find(x => x.id == parseInt(cityId));
 
     if(!miasto){
         return(

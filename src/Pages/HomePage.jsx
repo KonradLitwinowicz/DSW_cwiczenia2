@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react'
 import WeatherCard from '../components/WeatherCard'
-import WeatherDetails from '../components/weatherDetails'
+import WeatherDetails from '../components/WeatherDetails'
 import { useNavigate } from 'react-router-dom';
 
 function HomePage({miasta}) {
@@ -11,7 +11,7 @@ function HomePage({miasta}) {
   const handleClick = useCallback((miasto) => {
     console.log('Kliknieto miasto:', miasto.miasto);
     navigate(`/miasto/${miasto.id}`)
-  }, [navigate]);
+  }, []);
 
   const filteredMiasta = useMemo(() =>
   {

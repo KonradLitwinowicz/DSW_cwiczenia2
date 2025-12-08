@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { weatherData } from './data/WeatherData'
+import { weatherData } from './data/weatherData'
 import HomePage from './Pages/HomePage'
 import CityDetailPage from './Pages/CityDetailPage'
 import './App.css'
