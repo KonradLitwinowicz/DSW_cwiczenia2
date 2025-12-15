@@ -2,6 +2,7 @@ import { useState, useMemo, useCallback } from 'react'
 import WeatherCard from '../components/WeatherCard'
 import WeatherDetails from '../components/WeatherDetails'
 import { useNavigate } from 'react-router-dom';
+import UnitSwitcher from '../components/UnitSwitcher';
 
 function HomePage({miasta}) {
   const [wybraneMiasto, setWybraneMiasto] = useState(null);
@@ -24,7 +25,7 @@ function HomePage({miasta}) {
   return (
     <>
       <h1>Pogoda w Polsce</h1>
-      
+        <UnitSwitcher />
       <div>
         <input 
           type ="text"

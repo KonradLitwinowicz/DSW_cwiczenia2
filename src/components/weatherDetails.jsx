@@ -1,6 +1,10 @@
 import WeatherIcon from './WeatherIcon'
+import{ useSelector} from 'react-redux'
+import { convertTemperature, getUnitSymbol } from "../utils/temperature";
 function WeatherDetails({ miasto }){
     if(!miasto) return null;
+    const unit = useSelector((state) => state.settings.temperatureUnit);
+    const unitSymbol = getUnitSymbol(unit);
 
     return(
         <div className="card details-panel">
@@ -8,6 +12,7 @@ function WeatherDetails({ miasto }){
           <div className="details-row">
             <div className="details-item">
               <strong>Temperatura:</strong>
+              <div>{convertTemperature(miasto.aktualnaTemperatura, unit)} {unitSymbol}</div>
               <div>{miasto.aktualnaTemperatura} °C</div>
             </div>
             <div>
@@ -39,7 +44,7 @@ function WeatherDetails({ miasto }){
                         <WeatherIcon condition={dzień.pogoda}></WeatherIcon>
                       </div>
                       <div className="details-item"><strong>{dzień.dzień}</strong></div>
-                      <div className="details-item">Temperatura: {dzień.temperatura} °C</div>
+                      <div>{convertTemperature(dzień.temperatura, unit)} {unitSymbol}</div>
                       <div className="details-item">Pogoda: {dzień.pogoda}</div>
                       {dzień.kierunekWiatru && <div className="details-item">Kierunek wiatru: {dzień.kierunekWiatru}</div>}
                     </div>
